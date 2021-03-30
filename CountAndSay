@@ -1,0 +1,30 @@
+class Solution {
+    public String countAndSay(int n) {
+        
+     
+        String s="1";
+        for(int i=0;i<n-1;i++)
+        {
+            char c=s.charAt(0);
+        StringBuilder var=new StringBuilder();
+           int count=1;
+            for(int j=1;j<s.length();j++)
+            {
+                if(c!=s.charAt(j))
+                {
+                    var.append(count);
+                    var.append(c);
+                    count=0;
+                    c=s.charAt(j);
+                }
+                count++;
+            }
+            var.append(count);
+            var.append(c);
+            s=var.toString();
+            
+        }
+        return s;
+          
+    }
+}
